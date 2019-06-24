@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Repositories\Eloquent;
+
+use App\Repositories\Interfaces\AbstractInterface;
+
+class AbstractEloquent implements AbstractInterface {
+    protected $model;
+
+    public function __construct(string $model) {
+        $this->model = "App\\$model";
+    }
+
+    public function findOrfail($id) {
+        return $this->model::findOrfail($id);
+    }
+
+    public function with($id, $string) {
+        return $this->model::with($string)->find($id);
+    }
+
+    public function paginate() {
+        return $this->model::paginate();
+    }
+}

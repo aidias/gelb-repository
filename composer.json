@@ -1,0 +1,13 @@
+{
+    "name": "aidias/gelb-repository",
+    "description": "Repository structure for Laravel applications",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Rafael Casachi",
+            "email": "rcasachi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

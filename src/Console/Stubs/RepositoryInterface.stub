@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Repositories\Interfaces;
+
+use App\Http\Requests\%DummyStoreRequest%;
+use App\Http\Requests\%DummyUpdateRequest%;
+
+interface %DummyInterface% {
+    public function create(%DummyStoreRequest% $request);
+
+    public function update(%DummyUpdateRequest% $request, %$dummyModel%);
+
+    public function delete(%$dummyModel%);
+}

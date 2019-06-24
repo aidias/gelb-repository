@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Repositories\Eloquent;
+
+use App\Repositories\Interfaces\%DummyInterface%;
+use App\Http\Requests\%DummyStoreRequest%;
+use App\Http\Requests\%DummyUpdateRequest%;
+use App\%Model%;
+
+class %DummyEloquent% extends AbstractEloquent implements %DummyInterface% {
+
+    public function __construct() {
+        parent::__construct('%Model%');
+    }
+
+    public function create(%DummyStoreRequest% $request) {
+        return %Model%::create(Request::all());
+    }
+
+    public function update(%DummyUpdateRequest% $request, $model) {
+        $model->update(Request::all());
+        return $model;
+    }
+
+    public function delete($model) {
+        $model->delete();
+    }
+}

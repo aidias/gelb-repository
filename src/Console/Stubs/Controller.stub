@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Repositories\Interfaces\%DummyInterface%;
+use App\Http\Requests\%DummyStoreRequest%;
+use App\Http\Resources\%Model%;
+use App\Http\Requests\%DummyUpdateRequest%;
+
+class %DummyController% extends Controller
+{
+    protected $repository;
+
+    public function __construct(%DummyInterface% $repository) {
+        $this->repository = $repository;
+    }
+
+    public function index() { }
+
+    public function show($id) { }
+
+    public function store(%DummyStoreRequest% $request) { }
+
+    public function update(%DummyUpdateRequest% $request, int $id) { }
+
+    public function destroy($id) { }
+}
