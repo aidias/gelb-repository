@@ -54,7 +54,7 @@ class MakeRepository extends Command
                 file_exists(app_path()."/Repositories/Eloquent/{$repo}Eloquent.php")
             )
                 $this->addBindRegister($repo);
-            
+
             if(!file_exists(app_path()."/{$repo}.php"))
                 $this->generateModel($repo);
 
@@ -65,7 +65,7 @@ class MakeRepository extends Command
                 $this->info("Generating {$repo}StoreRequest");
                 Artisan::call("make:request {$repo}StoreRequest");
             }
-            
+
             if(!file_exists(app_path()."/Http/Requests/{$repo}UpdateRequest.php")) {
                 $this->info("Generating {$repo}UpdateRequest");
                 Artisan::call("make:request {$repo}UpdateRequest");
@@ -80,7 +80,7 @@ class MakeRepository extends Command
         $this->info('Binding interface in service provider.');
         $modelTemplate = preg_replace(
             "/public function register\(\)\n*\s*{/",
-            "public function register()\n\t{\n\t\t\$this->app->bind(".$name."Interface::class, ".$name."Eloquent::class);",
+            "public function register()\n\t{\n\t\t\$this->app->bind(\\App\\Repositories\\Interfaces\\".$name."Interface::class, \\App\\Repositories\\Eloquent\\".$name."Eloquent::class);",
             file_get_contents(app_path("Providers/RepositoryServiceProvider.php"))
         );
 
@@ -127,10 +127,10 @@ class MakeRepository extends Command
 
             $modelTemplate = str_replace(
                 [
-                    '%DummyStoreRequest%', 
-                    '%DummyUpdateRequest%', 
+                    '%DummyStoreRequest%',
+                    '%DummyUpdateRequest%',
                     '%DummyInterface%',
-                    '%Model%', 
+                    '%Model%',
                     '%DummyEloquent%',
                 ],
                 [
@@ -147,7 +147,7 @@ class MakeRepository extends Command
         }
     }
 
-    /** 
+    /**
      * Generate a Model
      */
     public function generateModel($name) {

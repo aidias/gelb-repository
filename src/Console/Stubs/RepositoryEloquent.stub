@@ -14,11 +14,11 @@ class %DummyEloquent% extends AbstractEloquent implements %DummyInterface% {
     }
 
     public function create(%DummyStoreRequest% $request) {
-        return %Model%::create(Request::all());
+        return %Model%::create($request->all());
     }
 
     public function update(%DummyUpdateRequest% $request, $model) {
-        $model->update(Request::all());
+        $model->update($request->all());
         return $model;
     }
 
