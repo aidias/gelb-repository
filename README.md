@@ -56,7 +56,9 @@ This will create the following files (if they don't exist already):
 - `app\Post.php`
 
 ## Authors
-- Rafael Casachi - Initial work - [Website](http://www.rafaelcasachi.eti.br)
+- Rafael Casachi - Initial work - [Website](https://rafaelcasachi.dev)
+- Cristiano Fromagio - Contributor - [GitHub](https://github.com/cristianofromagio)
+- Leandro Cuminato - Contributor - [GitHub](https://github.com/LeandrodeLimaC)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/aidias/gelb-repository) file for details.
